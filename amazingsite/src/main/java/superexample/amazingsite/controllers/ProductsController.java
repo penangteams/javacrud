@@ -1,5 +1,6 @@
 package superexample.amazingsite.controllers;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -22,15 +23,19 @@ import java.nio.file.StandardCopyOption;
 import java.util.Date;
 import java.util.List;
 
+
 @Controller
 @RequestMapping("/products")
 public class ProductsController {
-
     @Autowired
     private ProductsRepository repo;
+//https://www.youtube.com/watch?v=o1HsGbTZObQ&t=299s  for dotenv video
 
     @GetMapping({"", "/"})
     public String showProductList(Model model) {
+        Dotenv dotenv = Dotenv.load();
+        System.out.println("Sweet");
+        System.out.println(dotenv.get("DB_USERNAME"));
         List<Product> products = repo.findAll(Sort.by(Sort.Direction.DESC, "id"));
         model.addAttribute("products", products);
         return "products/index";
@@ -69,7 +74,7 @@ public class ProductsController {
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
- 
+
         Product product = new Product();
         product.setName(productDto.getName());
         product.setBrand(productDto.getBrand());
