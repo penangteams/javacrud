@@ -5051,3 +5051,6 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2024-08-06T18:55:32.769+08:00  INFO 7056 --- [amazingsite] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2024-08-06T18:55:47.567+08:00  WARN 7056 --- [amazingsite] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
 2024-08-06T18:55:47.571+08:00  WARN 7056 --- [amazingsite] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2024-08-06T20:55:43.132+08:00  INFO 7056 --- [amazingsite] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-06T20:55:43.133+08:00  INFO 7056 --- [amazingsite] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-06T20:55:43.134+08:00  INFO 7056 --- [amazingsite] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
